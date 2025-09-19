@@ -1,0 +1,21 @@
+name: accounting-app
+services:
+  - name: accounting-app
+    env:
+      - name: PORT
+        value: "10000"
+    ports:
+      - port: 10000
+        http:
+          paths:
+            - path: /
+              port: 10000
+    docker:
+      image: koyeb/app:main
+    regions:
+      - sin  # Singapore region for better latency in Indonesia
+    instance:
+      type: nano-1  # Smallest instance type to start with
+    scaling:
+      min: 1
+      max: 1  # Single instance for now, can scale up later
