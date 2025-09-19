@@ -54,7 +54,7 @@ mobile interface
 
 uvicorn main:app --reload --host 0.0.0.0 --port 8000  
 
-
+npm run dev
 
 Fplcitmotr46382946 for pass pythonannywhere
 
