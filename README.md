@@ -2,6 +2,42 @@
 
 A modern web application for managing business accounting tasks, generating financial reports, and analyzing financial data. This application provides a user-friendly interface for uploading financial data, generating reports, and visualizing financial metrics.
 
+## 🚀 Deployment
+
+### PythonAnywhere (Backend)
+
+1. **Clone the repository**:
+   ```bash
+   cd ~/myaccountingapp
+   git clone https://github.com/yourusername/Business-Accounting-App-Deploy.git
+   cd Business-Accounting-App-Deploy
+   ```
+
+2. **Set up virtual environment**:
+   ```bash
+   mkvirtualenv --python=/usr/bin/python3.10 venv
+   workon venv
+   pip install -r requirements.txt
+   pip install gunicorn uvicorn
+   ```
+
+3. **In PythonAnywhere dashboard**:
+   - Go to the "Web" tab
+   - Set "Source code" to: `/home/yourusername/myaccountingapp/Business-Accounting-App-Deploy`
+   - Set "Working directory" to the same path
+   - Set "Virtualenv" to: `/home/yourusername/.virtualenvs/venv`
+   - In the "Code" section, set the WSGI file to use `pythonanywhere_wsgi.py`
+   - Add environment variables if needed
+   - Click the green "Reload" button
+
+### Vercel (Frontend)
+
+1. Deploy your frontend to Vercel
+2. Set the environment variable:
+   ```
+   VITE_API_BASE_URL=https://yourusername.pythonanywhere.com
+   ```
+
 ## ✨ Features
 
 - **Template Generation**: Download pre-formatted Excel templates for standardized data entry
