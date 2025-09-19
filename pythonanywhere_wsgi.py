@@ -1,8 +1,13 @@
-# This WSGI configuration is specifically for PythonAnywhere
 import os
-from gunicorn.app.wsgiapp import run
+import sys
+from main import app
 
-if __name__ == '__main__':
-    # Default port if not set in environment
-    os.environ.setdefault('PORT', '8000')
-    run()
+# Add your project directory to the path
+path = '/home/acc950484/myaccountingapp/Business-Accounting-App-Deploy'
+if path not in sys.path:
+    sys.path.append(path)
+
+# Import your FastAPI app
+
+# This makes the app available as 'application' for WSGI
+application = app
